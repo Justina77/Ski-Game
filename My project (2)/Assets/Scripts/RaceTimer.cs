@@ -3,6 +3,13 @@ using UnityEngine;
 public class RaceTimer : MonoBehaviour
 {
     private bool timerRunning =false;
+    private float raceTime = 0;
+
+    private void Update()
+    {
+        if (timerRunning)
+            raceTime += Time.deltaTime;
+    }
 
     private void OnEnable()
     {
@@ -26,5 +33,6 @@ public class RaceTimer : MonoBehaviour
     {
         timerRunning = false;
         Debug.Log("Race finished!");
+        Debug.Log("race time: " + raceTime);
     }
 }

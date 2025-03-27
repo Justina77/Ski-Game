@@ -12,4 +12,10 @@ public class GameEvents : MonoBehaviour
         if (raceStart != null)
             raceStart();
     }
+
+    public static void CallRaceFinish()
+    {
+        if (raceEnd != null)
+            raceEnd();
+    }
 }
