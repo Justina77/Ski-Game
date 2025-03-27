@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
         animator.SetFloat("playerSpeed", speed);
         Vector3 velocity = transform.forward * speed * Time.fixedDeltaTime;
-        rb.velocity = new Vector3(velocity.x, rb.velocity.y, velocity.z);
+        rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
     }
 
     private float Remap(float oldMin, float oldMax, float newMin, float newMax, float oldValue)
