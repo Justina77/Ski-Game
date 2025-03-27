@@ -11,6 +11,7 @@ public class Obstacle : MonoBehaviour
     }
     protected virtual void PlayerCollision()
     {
+        PlayerEvents.CallOnHitEvent();
         Debug.Log("Player hit " + name);
     }
 }
