@@ -2,13 +2,9 @@ using UnityEngine;
 
 public class ExplodingObstacle : Obstacle
 {
-    void Start()
+    protected override void PlayerCollision()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        base.PlayerCollision();
+        Destroy(gameObject);
     }
 }

@@ -4,14 +4,13 @@ public class Obstacle : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             PlayerCollision();
         }
     }
-
-    private void PlayerCollision()
+    protected virtual void PlayerCollision()
     {
-        Debug.Log("Player hit" + name);
+        Debug.Log("Player hit " + name);
     }
 }
