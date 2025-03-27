@@ -4,6 +4,7 @@ public class RaceTimer : MonoBehaviour
 {
     private bool timerRunning =false;
     private float raceTime = 0;
+    [SerializeField] private float penaltyTime = 1;
 
     private void Update()
     {
@@ -14,13 +15,21 @@ public class RaceTimer : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.raceStart += StartRace;
-        GameEvents.raceEnd -= FinishRace;
+        GameEvents.raceEnd += FinishRace;
+        GameEvents.racePenalty += Penalty;
     }
 
     private void OnDisable()
     {
-        GameEvents.raceStart += StartRace;
+        GameEvents.raceStart -= StartRace;
         GameEvents.raceEnd -= FinishRace;
+        GameEvents.racePenalty -= Penalty;
+    }
+
+    private void Penalty()
+    {
+        raceTime += penaltyTime;
+        Debug.Log("penalty recieved!");
     }
 
     private void StartRace()

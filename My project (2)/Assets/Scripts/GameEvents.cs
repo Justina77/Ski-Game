@@ -18,4 +18,10 @@ public class GameEvents : MonoBehaviour
         if (raceEnd != null)
             raceEnd();
     }
+
+    public static void CallRacePenalty()
+    {
+        if (racePenalty != null)
+            racePenalty();
+    }
 }
