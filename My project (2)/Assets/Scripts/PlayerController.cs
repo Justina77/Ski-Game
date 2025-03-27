@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float accelaration = 100, turnSpeed = 100, minSpeed = 0, maxSpeed = 500, minAccelaration, maxAccelaration;
     [SerializeField] private LayerMask groundLayers;
     [SerializeField] private Transform groundTransform;
+    [SerializeField] private TakeDamage takeDamage;
     private float speed = 0;
     private Rigidbody rb;
     private Animator animator;
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (takeDamage.isHurt)
+            return;
         float angle = Mathf.Abs(transform.eulerAngles.y - 100);
         accelaration = Remap(0, 90, maxAccelaration, minAccelaration, angle);
         speed += accelaration * Time.fixedDeltaTime;
@@ -36,11 +39,11 @@ public class PlayerController : MonoBehaviour
         return newValue;
     }
 
-    void Update()
+    private void Update()
     {
         bool isGrounded = Physics.Linecast(transform.position, groundTransform.position, groundLayers);
 
-        if (isGrounded)
+        if (isGrounded && !takeDamage.isHurt)
         {
             if (Input.GetKey(leftInput) && transform.eulerAngles.y < 269)
             {

@@ -1645,6 +1645,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundTransform: {fileID: 1923878850}
+  takeDamage: {fileID: 684765304}
 --- !u!114 &684765304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1657,6 +1658,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94fd144310540e48940c997cf8f7381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHurt: 0
+  backwardForce: -700
+  upForce: 500
+  stunTime: 1
 --- !u!114 &684765305
 MonoBehaviour:
   m_ObjectHideFlags: 0
