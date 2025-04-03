@@ -11,7 +11,7 @@ public class LeaderBoard : MonoBehaviour
         bestTimes.Clear();
         for (int i = 0; i < 5; i++)
         {
-            bestTimes.Add(PlayerPrefs.GetFloat("time" + i, 9999999999));
+            bestTimes.Add(PlayerPrefs.GetFloat("time" + i, 999999));
         }
     }
 
