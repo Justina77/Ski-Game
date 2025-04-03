@@ -13,7 +13,7 @@ public class GameEndUI : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
+        gameOverMenu.SetActive(false);
         crossfade.CrossFadeAlpha(0, 1f, true);
     }
 
@@ -41,7 +41,7 @@ public class GameEndUI : MonoBehaviour
 
     private IEnumerator RestartCoroutine()
     {
-        crossfade.CrossFadeAlpha(0, 1f, true);
+        crossfade.CrossFadeAlpha(1, 1f, true);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -53,7 +53,7 @@ public class GameEndUI : MonoBehaviour
 
     private IEnumerator NextLevelCoroutine()
     {
-        crossfade.CrossFadeAlpha(0, 1f, true);
+        crossfade.CrossFadeAlpha(1, 1f, true);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(nextLevelIndex);
     }
@@ -65,7 +65,7 @@ public class GameEndUI : MonoBehaviour
 
     private IEnumerator QuitCoroutine()
     {
-        crossfade.CrossFadeAlpha(0, 1f, true);
+        crossfade.CrossFadeAlpha(1, 1f, true);
         yield return new WaitForSeconds(1);
         Application.Quit();
     }

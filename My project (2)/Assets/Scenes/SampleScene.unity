@@ -5070,7 +5070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 1968189318}
   crossfade: {fileID: 1074526344}
-  nextLevelIndex: 0
+  nextLevelIndex: 1
 --- !u!1001 &1678277056
 PrefabInstance:
   m_ObjectHideFlags: 0
