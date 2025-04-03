@@ -3460,6 +3460,7 @@ GameObject:
   - component: {fileID: 1383950682}
   - component: {fileID: 1383950681}
   - component: {fileID: 1383950680}
+  - component: {fileID: 1383950683}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3480,6 +3481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penaltyTime: 1
+  Leaderboard: {fileID: 1383950683}
 --- !u!114 &1383950681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3507,6 +3509,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1383950683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383950679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25087f60849fe5c478c6a1bea042c0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bestTimes: []
 --- !u!4 &1407290673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2693573932408249064, guid: 11ad6071766f6d5428a83259fef12ec1, type: 3}
