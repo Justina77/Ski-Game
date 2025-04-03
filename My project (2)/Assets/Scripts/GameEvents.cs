@@ -6,6 +6,13 @@ public class GameEvents : MonoBehaviour
     public static event RaceEvent raceStart;
     public static event RaceEvent raceEnd;
     public static event RaceEvent racePenalty;
+    public static event RaceEvent Quit;
+
+    public static void CallQuit()
+    {
+        if (Quit != null)
+            Quit();
+    }
 
     public static void CallRaceStart()
     {

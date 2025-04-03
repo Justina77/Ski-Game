@@ -745,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117953069100586070, guid: 3d3a741bcdb7b8c4a84f8beb3ae4d7e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -89.62137
+      value: -91.91
       objectReference: {fileID: 0}
     - target: {fileID: 9117953069100586070, guid: 3d3a741bcdb7b8c4a84f8beb3ae4d7e9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5070,6 +5070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 1968189318}
   crossfade: {fileID: 1074526344}
+  nextLevelIndex: 0
 --- !u!1001 &1678277056
 PrefabInstance:
   m_ObjectHideFlags: 0

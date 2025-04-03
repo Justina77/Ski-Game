@@ -10,6 +10,7 @@ public class GameEndUI : MonoBehaviour
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private Image crossfade;
     [SerializeField] private int nextLevelIndex;
+
     void Start()
     {
         gameObject.SetActive(false);
@@ -19,11 +20,13 @@ public class GameEndUI : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.raceEnd += EnableGameOver;
+        GameEvents.Quit += Quit;
     }
 
     private void OnDisable()
     {
         GameEvents.raceEnd -= EnableGameOver;
+        GameEvents.Quit -= Quit;
     }
 
     private void EnableGameOver()
@@ -55,8 +58,21 @@ public class GameEndUI : MonoBehaviour
         SceneManager.LoadScene(nextLevelIndex);
     }
 
-    public void QuitLevel()
+    private void Quit()
     {
-
+        StartCoroutine(QuitCoroutine());
     }
+
+    private IEnumerator QuitCoroutine()
+    {
+        crossfade.CrossFadeAlpha(0, 1f, true);
+        yield return new WaitForSeconds(1);
+        Application.Quit();
+    }
+
+    public void QuitButtom()
+    {
+        GameEvents.CallQuit();
+    }
+
 }
