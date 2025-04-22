@@ -8,12 +8,14 @@ public class GameEndUI : MonoBehaviour
 {
 
     [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private GameObject LeaderboardPanel;
     [SerializeField] private Image crossfade;
     [SerializeField] private int nextLevelIndex;
 
     void Start()
     {
         gameOverMenu.SetActive(false);
+        LeaderboardPanel.SetActive(false);
         crossfade.CrossFadeAlpha(0, 1f, true);
     }
 
@@ -32,6 +34,7 @@ public class GameEndUI : MonoBehaviour
     private void EnableGameOver()
     {
         gameOverMenu.SetActive(true);
+        LeaderboardPanel.SetActive(true);
     }
 
     public void RestartLevel()

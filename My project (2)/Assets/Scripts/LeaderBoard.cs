@@ -1,10 +1,11 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LeaderBoard : MonoBehaviour
 {
     [SerializeField] private List<float> bestTimes = new();
+
+    public List<float> BestTimes => bestTimes;
 
     private void Awake()
     {
@@ -13,11 +14,6 @@ public class LeaderBoard : MonoBehaviour
         {
             bestTimes.Add(PlayerPrefs.GetFloat("time" + i, 999999));
         }
-    }
-
-    private void DontDestroyOnLand(GameObject gameObject)
-    {
-        throw new NotImplementedException();
     }
 
     public void AddTime(float time)
@@ -29,12 +25,11 @@ public class LeaderBoard : MonoBehaviour
 
     private void SaveData()
     {
-        for(int i=0; i<5; i++)
+        for (int i = 0; i < 5; i++)
         {
-            if(i<bestTimes.Count)
-            PlayerPrefs.SetFloat("time"+i, bestTimes[i]);
+            if (i < bestTimes.Count)
+                PlayerPrefs.SetFloat("time" + i, bestTimes[i]);
         }
         PlayerPrefs.Save();
     }
-
 }
