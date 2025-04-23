@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RaceTimer : MonoBehaviour
 {
-    private bool timerRunning =false;
+    private bool timerRunning = false;
     private float raceTime = 0;
     [SerializeField] private float penaltyTime = 1;
     [SerializeField] private LeaderBoard Leaderboard;
@@ -30,7 +30,7 @@ public class RaceTimer : MonoBehaviour
     private void Penalty()
     {
         raceTime += penaltyTime;
-        Debug.Log("penalty recieved!");
+        Debug.Log("penalty received!");
     }
 
     private void StartRace()

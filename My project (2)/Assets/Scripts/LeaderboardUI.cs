@@ -18,7 +18,7 @@ public class LeaderboardUI : MonoBehaviour
 
         for (int i = 0; i < timeTexts.Count; i++)
         {
-            if (i < bestTimes.Count && bestTimes[i] < 999999f)
+            if (i < bestTimes.Count)
             {
                 float time = bestTimes[i];
                 int minutes = Mathf.FloorToInt(time / 60f);
