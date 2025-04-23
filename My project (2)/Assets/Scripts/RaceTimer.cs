@@ -47,7 +47,7 @@ public class RaceTimer : MonoBehaviour
         LeaderboardUI leaderboardUI = FindObjectOfType<LeaderboardUI>();
         if (leaderboardUI != null)
         {
-            leaderboardUI.UpdateUI();
+            leaderboardUI.UpdateLeaderboardUI();
         }
         GameData.Instance.racesCompleted++;
         Debug.Log("Race completed:" + GameData.Instance.racesCompleted);

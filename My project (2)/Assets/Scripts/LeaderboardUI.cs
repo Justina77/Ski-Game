@@ -1,37 +1,34 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class LeaderboardUI : MonoBehaviour
 {
-    [SerializeField] private List<TextMeshProUGUI> timeTexts;
+    [SerializeField] private List<Text> timeTexts;
     [SerializeField] private LeaderBoard leaderboard;
 
-    private void Start()
+    private void OnEnable()
     {
-        UpdateUI();
+        UpdateLeaderboardUI();
     }
 
-    public void UpdateUI()
+    public void UpdateLeaderboardUI()
     {
+        List<float> bestTimes = leaderboard.GetBestTimes();
+
         for (int i = 0; i < timeTexts.Count; i++)
         {
-            if (i < leaderboard.BestTimes.Count)
+            if (i < bestTimes.Count && bestTimes[i] < 999999f)
             {
-                timeTexts[i].text = FormatTime(leaderboard.BestTimes[i]);
+                float time = bestTimes[i];
+                int minutes = Mathf.FloorToInt(time / 60f);
+                float seconds = time % 60f;
+                timeTexts[i].text = string.Format("{0:00}:{1:00.00}", minutes, seconds);
             }
             else
             {
-                timeTexts[i].text = "---";
+                timeTexts[i].text = "--:--.--";
             }
         }
-    }
-
-    private string FormatTime(float time)
-    {
-        int minutes = Mathf.FloorToInt(time / 60f);
-        int seconds = Mathf.FloorToInt(time % 60f);
-        int milliseconds = Mathf.FloorToInt((time * 1000) % 1000);
-        return $"{minutes:00}:{seconds:00}.{milliseconds:000}";
     }
 }
